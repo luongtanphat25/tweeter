@@ -1,4 +1,9 @@
 /* eslint-disable camelcase */
+const escape = (str) => {
+  let div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
 
 const createTweetElement = (tweet) => {
   const { user, content, created_at } = tweet;
@@ -14,7 +19,7 @@ const createTweetElement = (tweet) => {
           ${user.handle}
         </h4>
       </header>
-      <p>${content.text}</p>
+      <p>${escape(content.text)}</p>
       <footer id="posted-tweet-footer">
         <p id="posted-time" style="font-size: medium;">
           ${timeago.format(new Date(created_at))}
@@ -34,7 +39,7 @@ const createTweetElement = (tweet) => {
 const renderTweets = (tweets) => {
   for (const tweet of tweets) {
     const $tweet = createTweetElement(tweet);
-    $('#posted-tweet').append($tweet);
+    $('#posted-tweet').prepend($tweet);
   }
 };
 
@@ -52,11 +57,11 @@ const submitForm = (event) => {
   }
 
   const serializedData = $('form').serialize();
-  console.log(serializedData);
 
   $.post('/tweets', serializedData)
-    .then((response) => {
-      console.log('Tweet submitted successfully:', response);
+    .then(() => {
+      $('#tweet-text').val('');
+      loadTweets();
     })
     .catch((error) => {
       console.log('Error submitting tweet:', error);
@@ -67,18 +72,13 @@ const loadTweets = () => {
   $.ajax({
     url: 'http://localhost:3000/tweets',
     method: 'GET',
-  }).then((tweets) => {
+    dataType: 'json',
+  }).done((tweets) => {
     renderTweets(tweets);
   });
 };
 
 $(document).ready(() => {
-  /*
-   * Client-side JS logic goes here
-   * jQuery is already loaded
-   * Reminder: Use (and do all your DOM work in) jQuery's document ready function
-   */
   $('form').on('submit', submitForm);
-
   loadTweets();
 });
