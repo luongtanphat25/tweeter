@@ -5,6 +5,15 @@ const escape = (str) => {
   return div.innerHTML;
 };
 
+const showErrorMessage = (message) => {
+  $('#error-message').text(message);
+  $('#error').show();
+};
+
+const hideErrorMessage = () => {
+  $('#error').hide();
+};
+
 const createTweetElement = (tweet) => {
   const { user, content, created_at } = tweet;
 
@@ -48,11 +57,11 @@ const submitForm = (event) => {
 
   const content = $('#tweet-text').val();
   if (!content) {
-    alert('Please enter tweet.');
+    showErrorMessage('Please enter tweet.');
     return;
   }
   if (content.length > 140) {
-    alert('Limited 140 characters.');
+    showErrorMessage('Limited 140 characters.');
     return;
   }
 
@@ -61,6 +70,7 @@ const submitForm = (event) => {
   $.post('/tweets', serializedData)
     .then(() => {
       $('#tweet-text').val('');
+      hideErrorMessage();
       loadTweets();
     })
     .catch((error) => {
@@ -79,6 +89,7 @@ const loadTweets = () => {
 };
 
 $(document).ready(() => {
+  hideErrorMessage();
   $('form').on('submit', submitForm);
   loadTweets();
 });

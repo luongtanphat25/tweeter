@@ -23,11 +23,20 @@
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
     <link rel="stylesheet" href="/styles/posted-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/error.css" type="text/css" />
 
     <!-- External JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> <!-- jQuery -->
-    <script src="https://kit.fontawesome.com/b516c7eb72.js" crossorigin="anonymous"></script> <!-- Font Awesome -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><!-- Time Ago -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://kit.fontawesome.com/b516c7eb72.js" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"
+      integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!-- Time Ago -->
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
@@ -36,7 +45,7 @@
   <body>
     <!-- Top nav bar (fixed) -->
     <nav>
-      <span id="logo">tweeter</span> 
+      <span id="logo">tweeter</span>
       <div class="left-nav">
         <p><strong>Write</strong> a new tweet</p>
         <i class="fa-solid fa-angles-down"></i>
@@ -52,6 +61,13 @@
 
     <!-- Page-specific (main) content here -->
     <main>
+      <!-- Error message -->
+      <div id="error">
+        <i class="fa-solid fa-triangle-exclamation" style="color: #ff0000"></i>
+        <p id="error-message"></p>
+        <i class="fa-solid fa-triangle-exclamation" style="color: #ff0000"></i>
+      </div>
+
       <!-- New tweet -->
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
@@ -65,35 +81,7 @@
         </form>
       </section>
 
-      
-      <section id="posted-tweet" class="tweet-container">
-        <!-- Display tweet 
-        <article class="tweet-container">
-          
-          <header id="posted-tweet-header">
-            <div class="tweet-left-header">
-              <img src="images/profile-hex.png" style="width: 3em; height: 3em" />
-              <h4 style="padding: 0 0.3em; font-weight: lighter">Phat Luong</h4>
-            </div>
-            <h4 style="padding: 0 0.3em; font-weight: lighter" id="tweet-right-header">@luongtanphat</h4>
-          </header>
-
-          
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi autem pariatur amet aperiam. Praesentium, corrupti rem! Accusantium suscipit distinctio aliquam numquam non molestiae sequi, vel omnis, itaque libero temporibus consectetur.</p>
-
-          
-          <footer id="posted-tweet-footer">
-            <p id="posted-time" style="font-size: medium;">10 day ago</p>
-            <div class="logo">
-              <i class="fa-solid fa-flag"></i>
-              <i class="fa-solid fa-arrows-rotate"></i>
-              <i class="fa-solid fa-heart"></i>
-            </div>
-          </footer>
-        </article>-->
-      </section> 
-
-
+      <section id="posted-tweet" class="tweet-container"></section>
     </main>
 
     <script type="text/javascript" src="scripts/composer-char-count.js"></script>
