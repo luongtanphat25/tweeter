@@ -41,6 +41,16 @@ const renderTweets = (tweets) => {
 const submitForm = (event) => {
   event.preventDefault();
 
+  const content = $('#tweet-text').val();
+  if (!content) {
+    alert('Please enter tweet.');
+    return;
+  }
+  if (content.length > 140) {
+    alert('Limited 140 characters.');
+    return;
+  }
+
   const serializedData = $('form').serialize();
   console.log(serializedData);
 
