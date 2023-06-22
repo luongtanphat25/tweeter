@@ -8,19 +8,16 @@ nav {
   padding: 1.5em;
   position: fixed;
 }
-
 #logo {
-  font-family: "Bungee", cursive;
-  margin: 1, 5em 120px;
+  font-family: 'Bungee', cursive;
+  margin: 1,5em 120px;
 }
-
 .left-nav {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
 }
-
 nav .left-nav p {
   margin: 0 10px;
 }
@@ -28,6 +25,6 @@ nav .left-nav p {
 @media screen and (max-width: 1024px) {
   nav {
     background-color: #cc8800;
-    background-image: url("https://www.transparenttextures.com/patterns/beige-paper.png");
+    background-image: url('https://www.transparenttextures.com/patterns/beige-paper.png');
   }
 }

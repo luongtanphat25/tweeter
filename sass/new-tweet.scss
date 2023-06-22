@@ -1,7 +1,6 @@
 form {
   display: block;
 }
-
 label#tweet-label {
   display: block;
   width: 100%;
@@ -21,11 +20,12 @@ label#tweet-label {
   padding-top: 10px;
   display: flex;
   justify-content: space-between;
-  font-family: "Bungee", cursive;
+  font-family: 'Bungee', cursive;
 }
 
 #tweet-button {
   background-color: #4056A1;
   color: #fff;
+  
   padding: 0.5rem;
 }
