@@ -7,8 +7,17 @@ header#main-header {
   justify-content: center;
   background-color: #cc8800;
   background-image: url('https://www.transparenttextures.com/patterns/beige-paper.png');
+  flex: 1;
 }
 
 header .avatar span {
   font-weight: lighter;
+}
+
+@media screen and (min-width: 1025px) {
+  header#main-header {
+    margin: 160px 1em;
+    align-items: center;
+    width: 33.3vw;
+  }
 }
