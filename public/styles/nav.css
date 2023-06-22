@@ -25,8 +25,14 @@ nav .left-nav p {
   margin: 0 10px;
 }
 
+#nav-button-tweet-icon{
+  background-color: #4056A1;
+  border: 0;
+  color: red;
+}
+
 @media screen and (max-width: 1024px) {
-  nav {
+  nav, #nav-button-tweet-icon {
     background-color: #cc8800;
     background-image: url("https://www.transparenttextures.com/patterns/beige-paper.png");
   }

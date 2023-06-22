@@ -90,6 +90,11 @@ const loadTweets = () => {
 
 $(document).ready(() => {
   hideErrorMessage();
+  $('.new-tweet').hide();
   $('form').on('submit', submitForm);
   loadTweets();
+
+  $('#nav-button-tweet-icon').on('click', () => {
+    $('.new-tweet').slideToggle();
+  });
 });
