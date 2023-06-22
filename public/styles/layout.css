@@ -32,6 +32,22 @@ main {
   margin: auto;
 }
 
+#button-up {
+  padding: 1em;
+  color: white;
+  background-color: orangered;
+  border: 0;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 1em;
+  right: 1em;
+  z-index: 9999;
+}
+#button-up:hover {
+  background-color: red;
+  box-shadow: 0 1em 1em grey;
+}
+
 @media screen and (min-width: 1025px) {
   body {
     display: flex;

@@ -89,12 +89,33 @@ const loadTweets = () => {
 };
 
 $(document).ready(() => {
+  //hide some elements
   hideErrorMessage();
   $('.new-tweet').hide();
+  $('#button-up').hide();
+
   $('form').on('submit', submitForm);
+
   loadTweets();
 
+  //toggle tweet form
   $('#nav-button-tweet-icon').on('click', () => {
     $('.new-tweet').slideToggle();
+    $('#tweet-text').focus();
+  });
+
+  $(window).scroll(() => {
+    if ($(this).scrollTop() > 100) {
+      $('#button-up').show();
+    } else {
+      $('#button-up').hide();
+    }
+  });
+
+  // Scroll to top and hide the button when clicked
+  $('#button-up').click(() => {
+    $('html, body').animate({ scrollTop: 0 }, 'slow');
+    $('.new-tweet').show();
+    $('#button-up').hide();
   });
 });
