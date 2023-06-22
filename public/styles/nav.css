@@ -3,14 +3,14 @@ nav {
   justify-content: space-between;
   height: 120px;
   width: 100%;
-  background: #4056A1;
+  background: #4056a1;
   color: #ffffff;
   padding: 1.5em;
   position: fixed;
 }
 
 #logo {
-  font-family: "Bungee", cursive;
+  font-family: 'Bungee', cursive;
   margin: 1, 5em 120px;
 }
 
@@ -25,15 +25,16 @@ nav .left-nav p {
   margin: 0 10px;
 }
 
-#nav-button-tweet-icon{
-  background-color: #4056A1;
+#nav-button-tweet-icon {
+  background-color: #4056a1;
   border: 0;
   color: red;
 }
 
 @media screen and (max-width: 1024px) {
-  nav, #nav-button-tweet-icon {
+  nav,
+  #nav-button-tweet-icon {
     background-color: #cc8800;
-    background-image: url("https://www.transparenttextures.com/patterns/beige-paper.png");
+    background-image: url('https://www.transparenttextures.com/patterns/beige-paper.png');
   }
 }
