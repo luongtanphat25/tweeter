@@ -16,3 +16,12 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+
+
+## Screenshots
+!["Tweets displays in desktop"](https://github.com/luongtanphat25/tweeter/blob/master/docs/desktop.png)
+
+!["Tweets displays in mobile devices"](https://github.com/luongtanphat25/tweeter/blob/master/docs/mobile.png)
+
+!["Toggle button to scrool on top"](https://github.com/luongtanphat25/tweeter/blob/master/docs/scroll-button.png)
+
